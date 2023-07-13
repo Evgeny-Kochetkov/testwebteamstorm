@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 import { theme } from './theme'
 
-const {font, colors: {smoke, whiteColor}} = theme
+const {font, colors: { whiteColor }} = theme
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
 		scroll-behavior: smooth;
 		text-rendering: optimizeSpeed;
 		font-family: ${font};
-		font-size: 24px;
+		font-size: 1.5vmax;
 		font-weight: 700;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;

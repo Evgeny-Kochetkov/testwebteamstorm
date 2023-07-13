@@ -10,17 +10,17 @@ import {
     SWrap,
     SFormWrap,
     SButtonFormTab,
-    Slabel,
-    Sinput,
-    SinputCheckbox,
-    SlabelCheckbox,
+    SLabel,
+    SInput,
+    SInputCheckbox,
+    SLabelCheckbox,
     SA,
     SDarkgrayBox,
     SContinueButton,
     SP,
     SLine,
     SGridBox,
-    NavMenuButton
+    SEntryMenuButton
 } from './style'
 
 import { socialEntryButtonsConfig } from './config'
@@ -30,9 +30,9 @@ export const AuthorizationSection = () => {
     const socialEntryButtons = useMemo(() => {
         return socialEntryButtonsConfig.map(({id, text, icon}, i) => {
             return (
-                <NavMenuButton id={id} gridArea={id} key={id} green={!i} odd={i%2} icon={icon}>
+                <SEntryMenuButton id={id} gridArea={id} key={id} green={!i} odd={i%2} icon={icon}>
                     {text}
-                </NavMenuButton>
+                </SEntryMenuButton>
             )
         })
     }, [])
@@ -51,20 +51,20 @@ export const AuthorizationSection = () => {
                 </SButtonFormTab>
                 <SFormWrap>
                     <form action='' method='post' name='form' style={{'margin' : '0 30px'}}>
-                        <Slabel htmlFor='usernameInput'>
+                        <SLabel htmlFor='usernameInput'>
                             Электронная почта или никнейм:
-                        </Slabel>
-                        <Sinput type='text' name='username' placeholder='Никнейм юзера' id='usernameInput'/>
-                        <Slabel htmlFor='passwordInput'>
+                        </SLabel>
+                        <SInput type='text' name='username' placeholder='Никнейм юзера' id='usernameInput'/>
+                        <SLabel htmlFor='passwordInput'>
                             Пароль:
-                        </Slabel>
-                        <Sinput type='password' name='password' placeholder='' id='passwordInput'/>
-                        <SinputCheckbox type='checkbox' id='rememberMe' name='rememberMe' value='yes'/> 
-                        <SlabelCheckbox htmlFor='rememberMe'>
+                        </SLabel>
+                        <SInput type='password' name='password' placeholder='' id='passwordInput'/>
+                        <SInputCheckbox type='checkbox' id='rememberMe' name='rememberMe' value='yes'/> 
+                        <SLabelCheckbox htmlFor='rememberMe'>
                             Запомнить меня
-                        </SlabelCheckbox>
+                        </SLabelCheckbox>
                     </form>
-                    <img src={iAmNotARobotImg} alt="iAmNotARobotImg" style={{'margin' : '20px auto'}}/>
+                    <img src={iAmNotARobotImg} alt="iAmNotARobotImg" style={{'margin' : '1vh auto', 'width' : '20vw', }}/>
                     <SA href="#">Ввостановить пароль</SA>
                     <SDarkgrayBox>
                         <SContinueButton>
