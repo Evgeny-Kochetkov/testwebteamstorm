@@ -1,4 +1,4 @@
-import { socialEntryButtonsConfigType } from '../../types/socialEntryButtonsConfigTyte'
+import { socialEntryButtonsConfigType } from '../../types/socialEntryButtonsConfigType'
 
 import googleIcon from '../../assets/icons/google.svg'
 import appleIcon from '../../assets/icons/apple.svg'

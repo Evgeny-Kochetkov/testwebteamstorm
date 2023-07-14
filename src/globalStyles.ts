@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
 		scroll-behavior: smooth;
 		text-rendering: optimizeSpeed;
 		font-family: ${font};
-		font-size: 1.5vmax;
+		font-size: 1vmax;
 		font-weight: 700;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
