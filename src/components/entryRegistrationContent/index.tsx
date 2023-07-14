@@ -1,5 +1,7 @@
-import { useMemo } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { useTypedSelector } from '../../hooks/useTypedSelector'
+
+import { useWtsServise } from '../../services/useWtsServise'
 
 import {
     SEntryRegistrationWrap,
@@ -26,6 +28,13 @@ import { socialEntryButtonsConfig } from '../entryRegistrationContent/config'
 export const EntryRegistrationWrap = () => {
 
     const {entryRegistrationState} = useTypedSelector(state => state.entryRegistrationState)
+    const [logDataUser, setLogDataUser] = useState({username: '', password: ''})
+
+    const {loading, error, postLogDataUser} = useWtsServise();
+
+    const onLogDataUserResponse = (dataUser: {username: string, password: string}) => {
+        return postLogDataUser(JSON.stringify(dataUser)).then(response => console.log(response)) 
+    }
 
     const socialEntryButtons = useMemo(() => {
         return socialEntryButtonsConfig.map(({id, text, icon}, i) => {
@@ -37,6 +46,13 @@ export const EntryRegistrationWrap = () => {
         })
     }, [])
 
+    const onValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setLogDataUser((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value,
+        }))
+    }
+
     const socialRegistrationButtons = useMemo(() => socialEntryButtons.slice(1), [])
 
     const content = entryRegistrationState === 'entry' ? 
@@ -45,11 +61,22 @@ export const EntryRegistrationWrap = () => {
                 <SLabel htmlFor='usernameInput'>
                     Электронная почта или никнейм:
                 </SLabel>
-                <SInput type='text' name='username' placeholder='Никнейм юзера' id='usernameInput'/>
+                <SInput 
+                    type='text' 
+                    name='username' 
+                    placeholder='Никнейм юзера' 
+                    id='usernameInput'
+                    onChange={(e) => onValueChange(e)}
+                />
                 <SLabel htmlFor='passwordInput'>
                     Пароль:
                 </SLabel>
-                <SInput type='password' name='password' placeholder='' id='passwordInput'/>
+                <SInput 
+                    type='password' 
+                    name='password' 
+                    placeholder='' id='passwordInput'
+                    onChange={(e) => onValueChange(e)}
+                />
                 <SInputCheckbox type='checkbox' id='rememberMe' name='rememberMe' value='yes'/> 
                 <SLabelCheckbox htmlFor='rememberMe'>
                     Запомнить меня
@@ -58,7 +85,11 @@ export const EntryRegistrationWrap = () => {
             <img src={iAmNotARobotImg} alt="iAmNotARobotImg" style={{'margin' : '1vh auto', 'width' : '20vw', }}/>
             <SA href="#">Ввостановить пароль</SA>
             <SDarkgrayBox>
-                <SGreenButton width={'25vh'}>
+                <SGreenButton 
+                    width={'25vh'} 
+                    id='submit'
+                    onClick={() => onLogDataUserResponse(logDataUser)}
+                >
                     ПРОДОЛЖИТЬ
                 </SGreenButton>
                 <SP>Вход с помощью:</SP>
@@ -109,7 +140,7 @@ export const EntryRegistrationWrap = () => {
                 </SLabelCheckbox>
             </form>
             <SDarkgrayBox>
-                <SGreenButton width={'25vh'}>
+                <SGreenButton width={'25vh'} id='submit'>
                     ПРОДОЛЖИТЬ
                 </SGreenButton>
                 <SP>Вход с помощью:</SP>
