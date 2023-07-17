@@ -1,10 +1,16 @@
-import { useMemo, useState, useEffect } from 'react'
+import { useMemo, useState } from 'react'
+
+import { useDispatch } from 'react-redux'
+import { changeValueEntry, changeValueRegistration } from '../../store/actionCreators/changeValueEntryRegistration'
+
 import { useTypedSelector } from '../../hooks/useTypedSelector'
 
 import { useWtsServise } from '../../services/useWtsServise'
 
 import {
-    SEntryRegistrationWrap,
+    SWrap,
+    SButtonFormTab,
+    SEntryRegistrationContent,
     SLabel,
     SInput,
     SInputCheckbox,
@@ -25,9 +31,12 @@ import enterWordImg from '../../assets/img/enter-word.jpg'
 
 import { socialEntryButtonsConfig } from '../entryRegistrationContent/config'
 
-export const EntryRegistrationWrap = () => {
+export const EntryRegistrationContent = () => {
 
     const {entryRegistrationState} = useTypedSelector(state => state.entryRegistrationState)
+
+    const dispatch = useDispatch()
+
     const [logDataUser, setLogDataUser] = useState({username: '', password: ''})
 
     const {loading, error, postLogDataUser} = useWtsServise();
@@ -152,8 +161,25 @@ export const EntryRegistrationWrap = () => {
         </>
 
     return (
-        <SEntryRegistrationWrap>
-            {content}
-        </SEntryRegistrationWrap>
+        <SWrap>
+            <SButtonFormTab
+                id='registrationTab'
+                onClick={() => dispatch(changeValueRegistration())}
+                className={entryRegistrationState === 'registration' ? 'active' : ''}   
+            >
+                РЕГИСТРАЦИЯ
+            </SButtonFormTab>
+            <SButtonFormTab 
+                id='entryButtonTab'
+                onClick={() => dispatch(changeValueEntry())}
+                className={entryRegistrationState === 'entry' ? 'active' : ''}
+                left={true}
+            >
+                ВХОД
+            </SButtonFormTab>
+            <SEntryRegistrationContent>
+                {content}
+            </SEntryRegistrationContent>
+        </SWrap>
     )
 }
