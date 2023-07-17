@@ -5,12 +5,14 @@ import { NavMenuButton } from "../navMenuButton"
 import { 
     SHeader,
     SLinkLogo,
-    SNavUl
+    SNavUl,
+    SRatingWrap,
+    SRating
 } from "./style"
 
 import { navButtonsConfig } from './config'
 
-export const Header = () => {
+export const Header = ({rating} : {rating: boolean}) => {
 
     const navButtons = useMemo(() => {
         return navButtonsConfig.map(({id, icon, text, red, bigSize}) => {
@@ -29,13 +31,27 @@ export const Header = () => {
     }, [])
 
     return (
-        <SHeader>
+        <SHeader rating={rating}>
             <SLinkLogo
                 href='#somehref'
                 title='The site of the company'
             >
-                ЛОГО
+                {rating ? 'название игры' : 'ЛОГО'}
             </SLinkLogo>
+            <SRatingWrap rating={rating}>
+                <SRating>
+                    Общий рейтинг:
+                    <span style={{'color' : '#FF0B0B', 'paddingLeft' : '5px'}}>
+                        8315
+                    </span>
+                </SRating>
+                <SRating>
+                    Рейтинг недели:
+                    <span style={{'color' : '#34F005', 'paddingLeft' : '5px'}}>
+                        8315
+                    </span>
+                </SRating>
+            </SRatingWrap>
             <nav>
                 <SNavUl>
                     {navButtons}

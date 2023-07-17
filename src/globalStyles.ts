@@ -1,9 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
 
-import { theme } from './theme'
-
-const {font, colors: { whiteColor }} = theme
-
 export const GlobalStyle = createGlobalStyle`
 
 	.activeLink {
@@ -22,12 +18,12 @@ export const GlobalStyle = createGlobalStyle`
 		height: calc(100vh - (100vh - 100%));
 		scroll-behavior: smooth;
 		text-rendering: optimizeSpeed;
-		font-family: ${font};
+		font-family: Philosopher, sans-serif;
 		font-size: 1vmax;
 		font-weight: 700;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		color: ${whiteColor};
+		color: #FFF;
 		letter-spacing: 0.1px;
 		overflow: hidden;
 		transition: background-color 500ms ease-in-out;

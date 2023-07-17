@@ -1,13 +1,13 @@
 import { Header } from '../../components/header'
 import { AuthLayoutSection } from '../../components/authLayoutSection'
-import { EntryRegistrationContent } from '../../components/entryRegistrationContent'
+import { MainContent } from '../../components/mainContent'
 
-export const AuthorizationPage = ()  => (
+export const MainPage = ()  => (
     <>
-        <Header rating={false}/>
+        <Header rating={true}/>
         <main>
             <AuthLayoutSection>
-                <EntryRegistrationContent/>
+                <MainContent/>
             </AuthLayoutSection>
         </main>
     </>

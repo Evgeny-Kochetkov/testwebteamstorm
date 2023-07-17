@@ -2,10 +2,6 @@ import styled, { css } from 'styled-components'
 
 import checkboxIcon from '../../assets/icons/checkbox.svg'
 
-import { theme } from '../../theme'
-
-const { colors: { whiteColor, black, yellow }, gradientOne, gradientTwo, textShadow } = theme
-
 export const SWrap = styled.div`
     display: flex;
     justify-content: center;
@@ -55,7 +51,7 @@ export const SEntryRegistrationContent = styled.div`
     flex-direction: column;
     align-items: center;
     width: 40vw;
-    background: linear-gradient(${gradientOne}), linear-gradient(${gradientTwo}), ${black};
+    background: linear-gradient(rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.00) 52.60%), linear-gradient(rgba(0, 0, 0, 0.00) 49.48%, rgba(0, 0, 0, 0.40) 100%), #1A1A1A;
     border-radius: 30px;
     transform-style: preserve-3d;
     z-index: 20;
@@ -76,7 +72,7 @@ export const SLabel = styled.label`
     margin-top: 1vh;
     display: inline-block;
     width: 100%;
-    text-shadow: ${textShadow};
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.50);
     text-align: center;
 `
 
@@ -87,11 +83,11 @@ export const SInput = styled.input`
     padding: 0 2vh;
     border-radius: 1.2vh;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.00) 75%), linear-gradient(360deg, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0.00) 43.96%);
-    color: ${whiteColor};
+    color: #FFF;
     font-weight: 400;
     box-shadow: 0px 1px 0px #FFF, 1px 0px 0px #FFF, -1px 0px 0px #FFF, 0px 0px 40px 0px rgba(0, 0, 0, 0.20) inset;
     &::placeholder {
-        color: ${whiteColor};
+        color: #FFF;
         font-weight: 400;
     }
 `
@@ -118,7 +114,7 @@ export const SLabelCheckbox = styled.label`
 
 export const SA = styled.a`
     font-size: 1.1vmax;
-    color: ${yellow};
+    color: #FFC93D;
     text-decoration: underline;
 `
 
@@ -138,11 +134,11 @@ export const SGreenButton = styled.button<{ width: string}>`
     margin-top: 1vh;
     width: ${({width}) => width}; 
     height: 5vh;
-    color: ${whiteColor};
+    color: #FFF;
     border-radius: 1.2vh;
     background: linear-gradient(180deg, #06AE17 0%, #126B10 52.69%, #0B6209 100%), linear-gradient(180deg, #353535 0%, #343434 52.69%, #282828 100%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
-    text-shadow: ${textShadow};
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.50);
     text-align: center;
     border: 1px solid #D2D2D2;
 `
@@ -150,7 +146,7 @@ export const SGreenButton = styled.button<{ width: string}>`
 export const SP = styled.p`
     margin-top: 1vh;
     font-size: 1.1vmax;
-    color: ${yellow};
+    color: #FFC93D;
 `
 
 export const SLine = styled.span`
@@ -200,8 +196,8 @@ export const SEntryMenuButton = styled.button<{ gridArea: string, green: boolean
     background: linear-gradient(180deg, #353535 0%, #343434 52.69%, #282828 100%);
     border-radius: 1.2vh;
     border: 1px solid white;
-    color: ${({green}) => green ? '#72FC05' : whiteColor};
-    text-shadow: ${textShadow};
+    color: ${({green}) => green ? '#72FC05' : '#FFF'};
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.50);
     opacity: 0.699999988079071;
     box-shadow: 0px -4px 2px rgba(125, 125, 125, 0.50), 0px 4px 4px rgba(0, 0, 0, 0.50);
     &::before {
