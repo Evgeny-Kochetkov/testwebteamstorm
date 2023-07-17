@@ -34,10 +34,98 @@ export const SBlock = styled.div<{width: string, height: string}>`
 
 export const SUserCardWrap = styled.div`
     display: flex;
+    width: 100%;
+    height: 100%;
     flex-direction: column;
+    gap: 2vh;
 `
 export const SNickName = styled.h1`
-    
+    width: 100%;
+    text-align: center;
+    margin-top: 1vh;
+    font-size: 1vmax;
+`
+
+export const SWrapCardContent = styled.div`
+    padding: 0 2vh;
+`
+
+export const SWrapAvatar = styled.div`
+
+`
+
+export const SAvatar = styled.div`
+    position: relative;
+    border-radius: 0.8vh;
+    transform-style: preserve-3d;
+    width: 12vh;
+    height: 13vh;
+    &::before {
+        content: '';
+        top: -2px;
+        left: -2px;
+        position: absolute;
+        width: calc(12vh + 4px);
+        height: calc(13vh + 4px);
+        background: linear-gradient(-45deg, rgba(255, 168, 0, 1), rgba(255, 169, 2, 0)), linear-gradient(-135deg, rgba(255, 205, 147, 1), rgba(226, 187, 136, 1));
+        border-radius: inherit;
+        transform: translateZ(-1px);
+    }
+`
+
+export const SVip = styled.img`
+    position: absolute;
+    width: 5vh;
+    height: 5vh;
+    top: -1.5vh;
+    right: -1.7vh;
+`
+
+export const SRank = styled.button`
+    margin-top: 1vh;
+    width: 12vh;
+    height: 2.5vh;
+    position: relative;
+    transform-style: preserve-3d;
+    border-radius: 2vh;
+    background: black;
+    &::before {
+        content: '';
+        left: -2px;
+        top: -2px;
+        width: calc(12vh + 4px);
+        height: calc(100% + 4px);
+        position: absolute;
+        background: linear-gradient( rgba(255, 154, 61, 0.17), rgba(255, 154, 61, 1)), linear-gradient(360deg, rgba(0, 0, 0, 0.81), rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.37), rgba(0, 0, 0, 0));
+        transform: translateZ(-2px);
+        border-radius: inherit;
+    }
+    &::after {
+        content: '';
+        left: 2px;
+        top: 2px;
+        width: calc(6vh - 4px);
+        height: calc(100% - 4px);
+        position: absolute;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%), #117600;
+        transform: translateZ(0px);
+        border-radius: 2vh 0 0 2vh;
+        opacity: 0.4000000059604645;
+        background-size: 50% auto;
+    }
+`
+
+export const SContentRank = styled.span`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFA724;
+    font-weight: 700;
+    text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.50);
+    font-size: 0.8vmax;
 `
 
 /* 

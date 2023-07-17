@@ -9,7 +9,6 @@ export const SAuthLayoutSection = styled.section`
     width: 100vw;
     height: 100vh;
     background: url(${authorizationBG}) center center/cover no-repeat;
-    /* z-index: 10; */
 `
 
 export const SSpanLeft = styled.span`
