@@ -1,10 +1,12 @@
 import { useDispatch } from 'react-redux'
 import { changeValueEntry, changeValueRegistration } from '../../store/actionCreators/changeValueEntryRegistration'
 
+import { useTypedSelector } from '../../hooks/useTypedSelector'
+
 import { EntryRegistrationWrap } from '../entryRegistrationContent'
 
 import { 
-    SAuthorizationSection,
+    SAuthLayoutSection,
     SSpanLeft,
     SSpanRight,
     SSpanBottom,
@@ -12,32 +14,36 @@ import {
     SButtonFormTab
 } from './style'
 
-export const AuthorizationSection = () => {
+export const AuthLayoutSection = (/* {children}: {children: React.ReactNode} */) => {
+
+    const {entryRegistrationState} = useTypedSelector(state => state.entryRegistrationState)
 
     const dispatch = useDispatch()
 
     return (
-        <SAuthorizationSection>
+        <SAuthLayoutSection>
             <SSpanLeft/>
             <SSpanRight/>
             <SSpanBottom/>
             <SWrap>
-                <SButtonFormTab 
-                    id='registrationTab' 
-                    active={false}
+                <SButtonFormTab
+                    id='registrationTab'
                     onClick={() => dispatch(changeValueRegistration())}
+                    className={entryRegistrationState === 'registration' ? 'active' : ''}
+                    
                 >
                     РЕГИСТРАЦИЯ
                 </SButtonFormTab>
                 <SButtonFormTab 
-                    id='entryButtonTab' 
-                    active={true}
+                    id='entryButtonTab'
                     onClick={() => dispatch(changeValueEntry())}
+                    className={entryRegistrationState === 'entry' ? 'active' : ''}
+                    left={true}
                 >
                     ВХОД
                 </SButtonFormTab>
                 <EntryRegistrationWrap/>
             </SWrap>
-        </SAuthorizationSection>
+        </SAuthLayoutSection>
     )
 }

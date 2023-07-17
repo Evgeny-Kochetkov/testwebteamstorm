@@ -9,7 +9,7 @@ import { theme } from '../../theme'
 const { colors: { black, yellow, yellow50opacity }, gradientOne, gradientTwo, shadow } = theme  
 
 
-export const SAuthorizationSection = styled.section`
+export const SAuthLayoutSection = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,27 +55,38 @@ export const SWrap = styled.div`
 `
 
 const leftPozitionBtn = css`
+    transform: translateX(45%);
+    color: rgba(128, 128, 128, 0.603);
+    background: linear-gradient(0deg, rgba(0,0,0,1)  0%, rgb(19, 18, 18) 100%);
+    border-top: 3px solid rgba(255, 255, 255, 0.158);
+    border-left: 3px  solid rgba(255, 255, 255, 0.253);
+    border-radius: 10px 50px 0 0;
     transform: translateX(-45%);
-    color: ${yellow};
-    background: url(${entryPolygon}) 0 0/100% no-repeat;
-    
 `
 
 const rightPozitionBtn = css`
     transform: translateX(45%);
-    color: ${yellow50opacity};
-    background: url(${registrationPolygon}) 0 0/100% no-repeat;
+    color: rgba(128, 128, 128, 0.603);
+    background: linear-gradient(0deg, rgba(0,0,0,1)  0%, rgb(19, 18, 18) 100%);
+    border-top: 3px solid rgba(255, 255, 255, 0.253);
+    border-right: 3px solid rgba(255, 255, 255, 0.253);
+    border-radius: 50px 10px 0 0;
     padding-left: 2vh;
 `
 
-export const SButtonFormTab = styled.button<{ id: string, active: boolean }>`
+export const SButtonFormTab = styled.button<{ left?: boolean }>`
     position: absolute;
-    display: flex;
-    justify-content: center;
+    top: -5.5vh;
     width: 25vh;
     height: 6vh;
-    top: -5.5vh;
-    padding-top: 1.5vh;
+    text-align: center;
     text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    ${({id}) => id === 'entryButtonTab' ? leftPozitionBtn : rightPozitionBtn }
+    ${({left}) => left ? leftPozitionBtn : rightPozitionBtn };
+    &.active {
+        background: linear-gradient(0deg, rgba(0,0,0,1)  0%, rgb(41, 41, 41) 100%);
+        border-top:3px solid rgba(255, 255, 255, 0.589);
+        border-right:3px solid rgba(255, 255, 255, 0.589);
+        z-index: 10;
+        color: rgba(255, 201, 61, 1);
+    }
 `

@@ -1,12 +1,12 @@
 import { Header } from '../../components/header'
-import { AuthorizationSection } from '../../components/authorizationSection'
+import { AuthLayoutSection } from '../../components/authorizationSection'
 
 export const AuthorizationPage = ()  => {
     return (
         <>
             <Header/>
             <main>
-                <AuthorizationSection/>
+                <AuthLayoutSection/>
             </main>
         </>
     )
