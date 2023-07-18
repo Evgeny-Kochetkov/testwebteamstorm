@@ -12,9 +12,9 @@ export const SWrap = styled.div`
 const leftPozitionBtn = css`
     transform: translateX(45%);
     color: rgba(128, 128, 128, 0.603);
-    background: linear-gradient(0deg, rgba(0,0,0,1)  0%, rgb(19, 18, 18) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgb(19, 18, 18) 100%);
     border-top: 3px solid rgba(255, 255, 255, 0.158);
-    border-left: 3px  solid rgba(255, 255, 255, 0.253);
+    border-left: 3px solid rgba(255, 255, 255, 0.253);
     border-radius: 10px 50px 0 0;
     transform: translateX(-45%);
 `
@@ -22,7 +22,7 @@ const leftPozitionBtn = css`
 const rightPozitionBtn = css`
     transform: translateX(45%);
     color: rgba(128, 128, 128, 0.603);
-    background: linear-gradient(0deg, rgba(0,0,0,1)  0%, rgb(19, 18, 18) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgb(19, 18, 18) 100%);
     border-top: 3px solid rgba(255, 255, 255, 0.253);
     border-right: 3px solid rgba(255, 255, 255, 0.253);
     border-radius: 50px 10px 0 0;
@@ -39,8 +39,8 @@ export const SButtonFormTab = styled.button<{ left?: boolean }>`
     ${({left}) => left ? leftPozitionBtn : rightPozitionBtn };
     &.active {
         background: linear-gradient(0deg, rgba(0,0,0,1)  0%, rgb(41, 41, 41) 100%);
-        border-top:3px solid rgba(255, 255, 255, 0.589);
-        border-right:3px solid rgba(255, 255, 255, 0.589);
+        border-top: 3px solid rgba(255, 255, 255, 0.589);
+        border-right: 3px solid rgba(255, 255, 255, 0.589);
         z-index: 10;
         color: rgba(255, 201, 61, 1);
     }

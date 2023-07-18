@@ -12,7 +12,7 @@ export const MenuButtons = () => {
     const menuButtons = useMemo(() => {
         return menuButtonsConfig.map(({id, icon, text, bigSize}) => {
 
-            const iconItem = icon ? <img src={icon} alt={id}/> : null
+            const iconItem = icon ? <img src={icon} alt={id} style={{'height' : '4.3vh'}}/> : null
             
             return (
                 <SMenuButton id={id} key={id} gridArea={id} bigSize={bigSize}>
@@ -24,8 +24,10 @@ export const MenuButtons = () => {
     }, [])
 
     return (
-        <SMenuButtons>
-            {menuButtons}
-        </SMenuButtons>
+        <div style={{'display' : 'flex', 'justifyContent': 'end', 'gridArea': 'menuButtons', 'width': '100%'}}>
+            <SMenuButtons>
+                {menuButtons}
+            </SMenuButtons>
+        </div>
     )
 }

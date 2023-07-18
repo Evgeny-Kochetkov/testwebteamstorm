@@ -1,5 +1,6 @@
 import { UserCard } from '../userCard'
 import { MenuButtons } from '../menuButtons'
+import { GameList } from '../gameList'
 
 import { 
     SMainContent,
@@ -9,10 +10,11 @@ import {
 export const MainContent = () => {
     return (
         <SMainContent>
-            <SBlock width="35vw" height="23vh" gridArea={'userCard'}>
+            <SBlock gridArea={'userCard'}>
                 <UserCard/>
             </SBlock>
             <MenuButtons/>
+            <GameList/>
         </SMainContent>
     )
 }

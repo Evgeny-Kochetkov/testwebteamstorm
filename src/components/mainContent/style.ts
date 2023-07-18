@@ -15,13 +15,10 @@ export const SMainContent = styled.div`
     padding: 8vh 2.5vw 4vh 2.5vw;
 `
 
-export const SBlock = styled.div<{width: string, height: string, gridArea?: string}>`
+export const SBlock = styled.div<{gridArea?: string}>`
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: ${({width}) => width};
-    height: ${({height}) => height};
+    width: 100%;
+    height: 100%;
     border-radius: 1.4vh;
     border: 2px solid linear-gradient(#e66465, #9198e5);
     background: #1A1A1A;
@@ -31,10 +28,11 @@ export const SBlock = styled.div<{width: string, height: string, gridArea?: stri
     &::before {
         content: '';
         top: -2px;
+        left: -2px;
         position: absolute;
-        width: calc(${({width}) => width} + 4px);
-        height: calc(${({height}) => height} + 4px);
-        background: linear-gradient(rgba(255, 255, 255, 100), rgba(255, 253, 252, 0));
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        background: linear-gradient(rgba(220, 220, 220, 1), rgba(90, 90, 90, 1));
         border-radius: inherit;
         transform: translateZ(-1px);
     }
