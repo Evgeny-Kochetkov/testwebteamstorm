@@ -10,6 +10,7 @@ export const App = () => {
 	return (
 		<>
 			<GlobalStyle/>
+			
 			{/* <AuthorizationPage/>  */} {/* ДЛЯ ОТОБРАЖЕНИЯ ОПРЕДЕЛЕННОЙ СТРАНИЦЫ РАСКОММЕНТИРУЙТЕ ЕЁ, ЗАКОММЕНТИРОВАВ ОСТАЛЬНЫЕ */}
 			<MainPage/>
 		</>

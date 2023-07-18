@@ -2,13 +2,20 @@ import styled from 'styled-components'
 
 export const SMainContent = styled.div`
     display: grid;
+    justify-items: center;
+    grid-template:  23vh 2vh 36.5vh 2vh 23vh/1fr 1fr 3vh 1fr;
+    grid-template-areas: 
+        'userCard . . menuButtons'
+        '. . . allGamers'
+        'gameList gameList . allGamers'
+        '. . . allGamers'
+        'chat chat . allGamers';
     width: 100%;
     height: 100%;
-    gap: 3vh;
     padding: 8vh 2.5vw 4vh 2.5vw;
 `
 
-export const SBlock = styled.div<{width: string, height: string}>`
+export const SBlock = styled.div<{width: string, height: string, gridArea?: string}>`
     position: relative;
     display: flex;
     justify-content: center;
@@ -19,6 +26,7 @@ export const SBlock = styled.div<{width: string, height: string}>`
     border: 2px solid linear-gradient(#e66465, #9198e5);
     background: #1A1A1A;
     transform-style: preserve-3d;
+    grid-area: ${({gridArea}) => gridArea};
     
     &::before {
         content: '';

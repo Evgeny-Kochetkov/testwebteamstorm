@@ -8,11 +8,13 @@ import {
     SRank,
     SContentRank,
     SNameIndicator,
-    SRatingUserCard
+    SRatingUserCard,
+    SPlus
 } from './style'
 
 import avatar from '../../assets/img/avatar.jpg'
 import vip from '../../assets/icons/vip.svg'
+import plus from '../../assets/icons/plus.svg'
 
 export const UserCard = () => (
     <SUserCardWrap>
@@ -44,11 +46,13 @@ export const UserCard = () => (
                 <span style={{'color': '#FFC93D'}}>
                     8 315 кг.
                 </span>
+                <SPlus src={plus} alt='plus'/>
             </SRatingUserCard>
             <SRatingUserCard gridArea={'totensValue'}>
                 <span style={{'color': '#FFC93D'}}>
                     8 315
                 </span>
+                <SPlus src={plus} alt='plus'/>
             </SRatingUserCard>
             <SRatingUserCard gridArea={'totalCapital'}>
                 Общий:
@@ -58,9 +62,11 @@ export const UserCard = () => (
                 <span style={{'color' : '#34F005', 'paddingLeft' : '4px'}}>
                     $
                 </span>
+                <SPlus src={plus} alt='plus'/>
             </SRatingUserCard>
             <SRatingUserCard gridArea={'weeklyCapital'}>
                 За неделю: 1 842 750 998 $
+                <SPlus src={plus} alt='plus'/>
             </SRatingUserCard>
         </SWrapCardContentGrid>
     </SUserCardWrap>

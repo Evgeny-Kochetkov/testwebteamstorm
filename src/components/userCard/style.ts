@@ -125,5 +125,14 @@ export const SNameIndicator = styled.span<{gridArea: string}>`
 export const SRatingUserCard = styled(SRating)<{gridArea: string}>`
     grid-area: ${({gridArea}) => gridArea};
     border-radius: 0.8vh;
-    color: #F4E6C2;
+    color: #F4E6C2
+`
+
+export const SPlus = styled.img`
+    position: absolute;
+    width: 1.75vh;
+    height: 1.75vh;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
 `
