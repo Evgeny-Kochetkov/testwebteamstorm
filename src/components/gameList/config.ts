@@ -1,6 +1,7 @@
-import { gameListButtonsType } from '../../types/gameListButtonsType'
+import { gameListButtonsConfigType } from '../../types/gameListButtonsConfigType'
+import { gameListConfigType } from '../../types/gameListConfigType'
 
-export const gameListButtonsConfig: gameListButtonsType[]  = [
+export const gameListButtonsConfig: gameListButtonsConfigType[]  = [
     {
         id: 'gameList',
         text: 'СПИСОК ИГР',
@@ -20,5 +21,10 @@ export const gameListButtonsConfig: gameListButtonsType[]  = [
         id: 'clans',
         text: 'КЛАНЫ'
     }
+
+]
+
+export const gameListConfig: gameListConfigType[]  = [
+    
 
 ]

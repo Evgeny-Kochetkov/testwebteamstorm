@@ -1,4 +1,4 @@
-export interface gameListButtonsType {
+export interface gameListButtonsConfigType {
     id: string,
     text: string,
     value?: number

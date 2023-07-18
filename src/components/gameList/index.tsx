@@ -5,7 +5,10 @@ import { SBlock } from "../mainContent/style"
 import { 
     SGameList,
     SGameListButtonWrap,
-    SGameListButton
+    SGameListButton,
+    SFilterWrap,
+    SFilter,
+    SGameListContentWrap
 } from "./style"
 
 import { gameListButtonsConfig } from './config'
@@ -46,7 +49,26 @@ export const GameList = () => {
                 {gameListButtons}
             </SGameListButtonWrap>
             <SBlock>
+                <SFilterWrap>
+                    <SFilter width='16.5vh'>
+                        Название игры
+                    </SFilter>
+                    <SFilter width='16.5vh'>
+                        Игроки
+                    </SFilter>
+                    <SFilter width='13vh'>
+                        Поле
+                    </SFilter>
+                    <SFilter width='9vh'>
+                        Ставки
+                    </SFilter>
+                    <SFilter width='10.8vh'>
+                        Вип-карта
+                    </SFilter>
+                </SFilterWrap>
+                <SGameListContentWrap>
 
+                </SGameListContentWrap>
             </SBlock>
         </SGameList>
     )

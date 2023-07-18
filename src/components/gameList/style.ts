@@ -9,7 +9,7 @@ export const SGameList = styled.div<{gridArea: string}>`
 export const SGameListButtonWrap = styled.div`
     display: flex;
     height: 4.8vh;
-    gap: 1vh;
+    gap: 0.5vh;
 `
 
 export const SGameListButton = styled.button`
@@ -37,9 +37,28 @@ export const SGameListButton = styled.button`
             height: calc(110% + 4px);
             background: linear-gradient(-45deg, rgba(255, 89, 36, 100), rgba(255, 162, 41, 100));
             border-radius: inherit;
-            /* box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.50); */
-            
             transform: translateZ(-1px);
         }
     }
+`
+
+export const SFilterWrap = styled.div`
+    display : flex;
+    align-items: center;
+    width: 100%;
+    height: 5vh;
+    background: rgba(0, 0, 0, 0.70);
+    border-radius: 1.4vh 1.4vh 0 0;
+`
+
+export const SFilter = styled.span<{width: string}>`
+    width: ${({width}) => width};
+    color: #FFC93D;
+    text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
+`
+
+export const SGameListContentWrap = styled.div`
+    display: flex;
+    flex-direction: column;
 `
