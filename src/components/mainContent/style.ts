@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { SRating } from '../header/style'
+
 export const SMainContent = styled.div`
     display: flex;
     width: 100%;
@@ -37,21 +39,37 @@ export const SUserCardWrap = styled.div`
     width: 100%;
     height: 100%;
     flex-direction: column;
-    gap: 2vh;
 `
 export const SNickName = styled.h1`
     width: 100%;
+    height: 4vh;
     text-align: center;
-    margin-top: 1vh;
-    font-size: 1vmax;
+    padding-top: 1vh;
+    font-size: 1.5vmax;
+    background: rgba(0, 0, 0, 0.70);
+    border-radius: 1.4vh 1.4vh 0 0;
 `
 
-export const SWrapCardContent = styled.div`
-    padding: 0 2vh;
+export const SWrapCardContentGrid = styled.div`
+    display: grid;
+    justify-items: center;
+    grid-template: 1vh 2vh 0.4vh 2.5vh 2vh 2vh 0.4vh 2.5vh 1vh 2.5vh 2vh / 2.5vh 1fr 2.5vh 1fr 2vh 1fr 2.5vh;
+    grid-template-areas: 
+        '. . . . . . .'
+        '. avatar . gold . tokens .'
+        '. avatar . . . . .'
+        '. avatar . goldValue . totensValue .'
+        '. avatar . . . . .'
+        '. avatar . capital capital capital .'
+        '. avatar . . . . .'
+        '. avatar . totalCapital totalCapital totalCapital .'
+        '. avatar . . . . .'
+        '. avatar . weeklyCapital weeklyCapital weeklyCapital .'
+        '. . . . . . .';
 `
 
 export const SWrapAvatar = styled.div`
-
+    grid-area: avatar;
 `
 
 export const SAvatar = styled.div`
@@ -117,6 +135,8 @@ export const SRank = styled.button`
 
 export const SContentRank = styled.span`
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 100%;
     height: 100%;
     display: flex;
@@ -128,21 +148,14 @@ export const SContentRank = styled.span`
     font-size: 0.8vmax;
 `
 
-/* 
-    margin-top: 2.5vh;
-    display: grid;
-    width: 100%;
-    gap: 2vh;
-    grid-template: 5vh 5vh 5vh / 1fr 1fr'} ;
-    grid-template-areas: ${({entryRegistrationState}) => entryRegistrationState === 'entry' ? 
-        `
-            'guestAccountBtn guestAccountBtn'
-            'googleBtn appleBtn'
-            'facebookBtn yandexBtn'
-        ` : 
-        `
-            'googleBtn appleBtn'
-            'facebookBtn yandexBtn'
-        `};
-    margin-bottom: 2vh;
-*/
+export const SNameIndicator = styled.span<{gridArea: string}>`
+    grid-area: ${({gridArea}) => gridArea};
+    text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.50);
+    font-weight: 600;
+`
+
+export const SRatingUserCard = styled(SRating)<{gridArea: string}>`
+    grid-area: ${({gridArea}) => gridArea};
+    border-radius: 0.8vh;
+    color: #F4E6C2;
+`

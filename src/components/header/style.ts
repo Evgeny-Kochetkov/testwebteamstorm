@@ -42,12 +42,14 @@ export const SNavUl = styled.ul`
 export const SRatingWrap = styled.div<{rating: boolean}>`
     display: ${({rating}) => rating ? 'flex' : 'none'};
     gap: 2vh;
+    width: 46vh;
+    height: 3vh;
 `
 
 export const SRating = styled.button`
     position: relative;
-    width: 13vw;
-    height: 3.2vh;
+    width: 100%;
+    height: 100%;
     color: #FFF;
     text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.50);
     font-family: Open Sans;
@@ -60,12 +62,11 @@ export const SRating = styled.button`
         content: '';
         left: -2px;
         top: -2px;
-        width: calc(13vw + 4px);
-        height: calc(3.2vh + 4px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
         position: absolute;
         background: linear-gradient( rgba(255, 154, 61, 0.17), rgba(255, 154, 61, 1)), linear-gradient(360deg, rgba(0, 0, 0, 0.81), rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.37), rgba(0, 0, 0, 0));
         z-index: -1;
         border-radius: inherit;
-        box-shadow: 0px 0px 2vh 0px rgba(0, 0, 0, 0.60), 0px 0.7vh 0px 0px #000;
     }
 `

@@ -41,13 +41,13 @@ export const Header = ({rating} : {rating: boolean}) => {
             <SRatingWrap rating={rating}>
                 <SRating>
                     Общий рейтинг:
-                    <span style={{'color' : '#FF0B0B', 'paddingLeft' : '5px'}}>
+                    <span style={{'color' : '#FF0B0B', 'paddingLeft' : '4px'}}>
                         8315
                     </span>
                 </SRating>
                 <SRating>
                     Рейтинг недели:
-                    <span style={{'color' : '#34F005', 'paddingLeft' : '5px'}}>
+                    <span style={{'color' : '#34F005', 'paddingLeft' : '4px'}}>
                         8315
                     </span>
                 </SRating>
